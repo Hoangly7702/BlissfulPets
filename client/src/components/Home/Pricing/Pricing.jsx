@@ -23,7 +23,7 @@ export default function Pricing() {
             <div className="h3"> {value.Name_Service}</div>
             <p>{value.Description}</p>
             <div className="price-link">
-              <span className="price"> {value.Price} VND</span>
+              <span className="price"> {value.Price}.000 VND</span>
               <Link to={``} className="link">
                 <span> See Detail</span>
               </Link>

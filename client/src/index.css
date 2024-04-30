@@ -20,6 +20,12 @@ body {
 }
 
 
-.container, .container-lg, .container-md, .container-sm, .container-xl {
+/* .container, .container-lg, .container-md, .container-sm, .container-xl {
       max-width: 1490px !important ;
-}
+} */
+
+/* @media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1490px !important ;
+  }
+} */
