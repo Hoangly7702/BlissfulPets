@@ -479,7 +479,7 @@ export default function Receipt() {
                       </div>
                       <div className="item-bill">
                         <span className="title-bill">Discount: </span>
-                        <span className="value-bill"> {bill.Discount} </span>
+                        <span className="value-bill"> {bill.Discount}%</span>
                       </div>
 
                       <div className="item-bill">

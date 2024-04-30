@@ -65,7 +65,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  width: fit-content;
+  /* width: fit-content; */
   transition: all 0.3s ease-in-out;
 }
 .item-content span:hover {
