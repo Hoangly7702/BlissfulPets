@@ -60,7 +60,7 @@ export default function SingleService() {
           <div className="item-content">
             <div className="header-service">Services</div>
             <div className="item-name-single">{data.Name_Service}</div>
-            <div className="item-price-single">{data.Price}.000 VND</div>
+            <div className="item-price-single">{data.Price} VND</div>
             <div className="item-desc-single">{data.Description}</div>
             <span>
               Scroll down below to book now with us <AiOutlineArrowDown />

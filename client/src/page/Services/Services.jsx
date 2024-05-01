@@ -135,9 +135,9 @@ export default function Services ()
 						<SliderServices title="Service" />
 					</div>
 				</div>
-				<div className="telephone">
+				{/* <div className="telephone">
 					<Telephone />
-				</div>
+				</div> */}
 				<FindService data={service} show={true}/>
 			</section>
 			<div className="services-container">

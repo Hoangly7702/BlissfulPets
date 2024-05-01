@@ -117,9 +117,9 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="telephone">
+      {/* <div className="telephone">
         <Telephone />
-      </div>
+      </div> */}
       <Scroll />
       <Footer />
     </div>

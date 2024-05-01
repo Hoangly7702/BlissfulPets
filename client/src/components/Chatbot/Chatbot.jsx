@@ -1,7 +1,7 @@
 // Chatbot.jsx
 import '../../styles/components/chatbot.css'; // Import CSS file
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 
 // axios.defaults.withCredentials = true;
@@ -10,32 +10,43 @@ const Chatbot = () => {
     const [messages, setMessages] = useState([]);
     const [userMessage, setUserMessage] = useState('');
     const [showChatbox, setShowChatbox] = useState(false);
-
+    const messagesRef = useRef(null);
+  
     const toggleChatbox = () => {
-        setShowChatbox(!showChatbox);
+      setShowChatbox(!showChatbox);
     };
-
+  
     const sendMessage = async () => {
         if (userMessage.trim() === '') return;
-        setMessages([...messages, { text: userMessage, sender: 'user' }]);
-        scrollToBottom();
+        
+        // Add user's message to state
+        setMessages(prevMessages => [...prevMessages, { text: userMessage, sender: 'user' }]);
+        
         try {
           const response = await axios.post('http://localhost:5005/webhooks/rest/webhook', {
             message: userMessage
           });
-          setMessages([...messages,...response.data.map(message => ({ text: message.text, sender: 'bot' }))]);
-        //   scrollToBottom();
+          
+          // Add bot's response to state
+          setMessages(prevMessages => [...prevMessages, ...response.data.map(message => ({ text: message.text, sender: 'bot' }))]);
         } catch (error) {
           console.error('Error sending message:', error);
-          // Hiển thị thông báo lỗi cho người dùng
         }
+        
+        // Clear user's message after sending
         setUserMessage('');
+        scrollToBottom();
       };
-
+  
     const scrollToBottom = () => {
-        const messagesContainer = document.getElementById('messages');
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      if (messagesRef.current) {
+        messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+      }
     };
+  
+    useEffect(() => {
+      scrollToBottom();
+    }, [messages]);
 
     return (
         <div>

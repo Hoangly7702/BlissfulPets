@@ -14,11 +14,27 @@
   position: sticky;
   display: flex;
   justify-content: center;
-  background-image: url("https://bizweb.dktcdn.net/100/458/454/themes/869149/assets/slider_3.jpg?1694535318764");
+  background-image: url("../../src/images/background-images.png");
+  background-repeat: no-repeat;
+  z-index: 1;
+  background-size: auto;
+}
+
+.background-home-image {
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  padding-bottom: 100px;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../src/images/background-home-images.png");
   background-repeat: no-repeat;
   z-index: 1;
   background-size: cover;
 }
+
+
 .bg-ab{
   position: absolute;
   background-color: #7b7a7a62;

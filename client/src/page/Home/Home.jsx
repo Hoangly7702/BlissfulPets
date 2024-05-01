@@ -9,6 +9,9 @@ import Telephone from "../../components/Appointment/Telephone";
 import ReactPlayer from "react-player";
 import Scroll from "../../components/ScrollToTop/Scroll";
 import axios from "axios";
+import Chatbot from "../../components/Chatbot/Chatbot";
+
+
 
 export default function Home() {
   const [service, setService] = useState([]);
@@ -24,7 +27,7 @@ export default function Home() {
   return (
     <div className="container">
       <section className="section1">
-        <div className="background-image">
+        <div className="background-home-image">
           <div className="container-item" style={{ zIndex:999 }}>
             <TopBar />
             <div className="slider">
@@ -37,7 +40,7 @@ export default function Home() {
       <div className="about-container">
         <div className="div-image">
           <img
-            src="https://bizweb.dktcdn.net/100/458/454/themes/869149/assets/feature_banner_1.jpg"
+            src="https://images.wagwalkingweb.com/media/daily_wag/blog_articles/hero/1659766686.463411/10-dog-spas-around-the-world-to-add-to-buddys-bucket-list.png"
             alt=""
             className="image-about"
           />
@@ -75,11 +78,11 @@ export default function Home() {
           <Pricing />
         </div>
       </div>
-      <div className="telephone">
+      {/* <div className="telephone">
         <Telephone />
-      </div>
+      </div> */}
       
-
+      <Chatbot/>
       
       <Scroll />
       {/* <div className="video">

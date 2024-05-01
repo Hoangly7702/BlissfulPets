@@ -60,7 +60,7 @@ export default function Home ()
 							<div className="top-chart">
 								<span className="header-receipt"> Revenue</span>
 								<div className="value-chart">
-									<div className="left-value">{ revenue }.000 VND</div>
+									<div className="left-value">{ revenue } </div>
 									<div className="right-value">
 										<button
 											className="button-action"

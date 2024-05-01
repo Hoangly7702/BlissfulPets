@@ -3,7 +3,7 @@
 /* Chatbot.css */
 
 .chat-title{
-    background: var(--main-color);
+    background: #be9660;
     color: white;
     border-top-left-radius:10px ;
     border-top-right-radius:10px ;
@@ -27,7 +27,7 @@
     line-height: 50px;
     cursor: pointer;
     z-index: 11;
-    background-image: url('../../../images/cat.jpg'); /* Replace this with the URL or path to your image */
+    background-image: url('../../images/cat.jpg'); /* Replace this with the URL or path to your image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@
   .user-message {
     font-size: 13px;
 
-    background-color: var(--main-color);
+    background-color: #be9660;
     color: white;
     padding: 5px;
     margin: 5px;
@@ -106,6 +106,6 @@
     border-radius: 0 0 10px 0;
     border: 1px solid white;
     cursor: pointer;
-    background: var(--main-color);
+    background: #be9660;
   }
   
