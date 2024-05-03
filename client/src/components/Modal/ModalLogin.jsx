@@ -162,7 +162,7 @@ export default function ModalLogin({ open, onClose }) {
               </div>
               {/* link to forget page */}
               <div className="user-box">
-                <Link to="">
+                <Link to="/reset">
                   <span> Forgot your password ? </span>
                 </Link>
               </div>

@@ -199,7 +199,7 @@ export default function Login() {
           )}
           {/* link to forget page */}
           <div className="user-box">
-            <Link to="">
+            <Link to="/reset">
               <span> Forgot your password ? </span>
             </Link>
           </div>

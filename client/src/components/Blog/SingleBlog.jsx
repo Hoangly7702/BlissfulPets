@@ -351,9 +351,9 @@ export default function SingleBlog() {
         </div>
       </div>
 
-      {/* <div className="telephone">
+      <div className="telephone">
         <Telephone />
-      </div> */}
+      </div>
       <Footer />
     </div>
   );

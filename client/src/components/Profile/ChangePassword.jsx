@@ -162,7 +162,7 @@ export default function ChangePassword() {
             >
               Save
             </button>
-            <Link to={``} className="link">
+            <Link to={`/reset`} className="link">
               Forget your password ?
             </Link>
           </div>
