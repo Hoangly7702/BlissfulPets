@@ -47,7 +47,7 @@ export const DeleteCategory = async (req, res) => {
   const service = req.body.Category;
   try {
     try {
-      // const services = await Service.deleteMany(service);
+      const services = await Service.deleteMany(service);
     } catch (error) {
       responseType.statusText = "Failed";
       responseType.message = "Delete service Failed";

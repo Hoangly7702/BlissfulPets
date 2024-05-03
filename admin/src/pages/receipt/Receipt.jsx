@@ -475,16 +475,16 @@ export default function Receipt() {
                       </div>
                       <div className="item-bill">
                         <span className="title-bill"> Sum price:</span>
-                        <span className="value-bill">{bill.SumPrice} VND</span>
+                        <span className="value-bill">{bill.SumPrice} </span>
                       </div>
                       <div className="item-bill">
                         <span className="title-bill">Discount: </span>
-                        <span className="value-bill"> {bill.Discount}%</span>
+                        <span className="value-bill"> {bill.Discount} </span>
                       </div>
 
                       <div className="item-bill">
                         <span className="title-bill">Total: </span>
-                        <span className="value-bill">{bill.Total} VND</span>
+                        <span className="value-bill">{bill.Total} </span>
                       </div>
                       <div className="item-bill">
                         <span className="title-bill">Date: </span>

@@ -513,12 +513,12 @@ export default function Services() {
                     name="Price"
                     placeholder="Price"
                     required
-                    value={inputField.Price} 
+                    value={inputField.Price}
                     onChange={InputHandler}
                   />
                 </div>
                 {errField.PriceErr.length > 0 && (
-                  <span className="error no-padding">{errField.PriceErr}</span>
+                  <span className="error no-padding">{errField.PriceErr} </span>
                 )}
                 <div className="item-receipt padding-service">
                   <textarea
@@ -532,7 +532,7 @@ export default function Services() {
                   />
                 </div>
                 {errField.DescriptionErr.length > 0 && (
-                  <span className="error no-padding">{errField.PriceErr}</span>
+                  <span className="error no-padding">{errField.PriceErr} </span>
                 )}
 
                 <select
