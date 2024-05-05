@@ -73,36 +73,43 @@ export default function Register() {
   };
 
   // handle Submit
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const customer = {
-      Name_Customer: inputField.Name_Customer,
-      Telephone: inputField.Telephone,
-      Email: inputField.Email,
-      Password: inputField.Password,
-      token: recaptchaValue,
-    };
-    try {
-      const response = await axios.post(
-        "http://localhost:8800/api/auth/register",
-        customer
-      );
+ // handle Submit
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  // Kiểm tra hợp lệ của form trước khi gửi yêu cầu
+  const formIsValid = validateForm();
+  if (!formIsValid) {
+    // Nếu form không hợp lệ, hiển thị thông báo lỗi và không gửi yêu cầu
+    return;
+  }
 
-      if (response.data.status === 300) {
-        toast.error(response.data.message);
-      } else {
-        toast.success(response.data.message);
-        setTimeout(() => {
-          history("/login");
-        }, 3000);
-      }
-    } catch (err) {
-      toast.error("Form Invalid!");
-    }
-    // if (validateForm()) {
-     
-    // }
+  const customer = {
+    Name_Customer: inputField.Name_Customer,
+    Telephone: inputField.Telephone,
+    Email: inputField.Email,
+    Password: inputField.Password,
+    token: recaptchaValue,
   };
+
+  try {
+    const response = await axios.post(
+      "http://localhost:8800/api/auth/register",
+      customer
+    );
+
+    if (response.data.status === 300) {
+      toast.error(response.data.message);
+    } else {
+      toast.success(response.data.message);
+      setTimeout(() => {
+        history("/login");
+      }, 3000);
+    }
+  } catch (err) {
+    toast.error("Form Invalid!");
+  }
+};
+
   const validateForm = () => {
     let formValid = true;
     setInputField({

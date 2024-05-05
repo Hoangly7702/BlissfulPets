@@ -61,7 +61,7 @@ const CustomerSchema = new Schema(
     },
     Gender: {
       type: String,
-      default: "Male",
+      default: "Female",
     },
     Collect: {
       type: Number,
