@@ -1,91 +1,244 @@
 version: "3.1"
 
+
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Xin chào
+    - Hi
+    - Hello
+    - Chào bạn
+    - Mình cần hỗ trợ
+    - Mình cần tư vấn
+    - Tôi cần giúp đỡ
+    - Tôi có thắc mắc
+
+- intent: opening_hours
+  examples: |
+    - Giờ mở cửa là bao nhiêu?
+    - Blissful Pets mở cửa vào lúc nào?
+    - Khi nào Blissful Pets mở cửa?
+    - Blissful Pets mở cửa từ khi nào đến khi nào?
+
+- intent: working_hours
+  examples: |
+    - Giờ làm việc của Blissful Pets là gì?
+    - Blissful Pets làm việc vào thời gian nào?
+    - Khi nào Blissful Pets làm việc?
+    - Blissful Pets hoạt động vào giờ nào?
+
+- intent: operation_days
+  examples: |
+    - Blissful Pets hoạt động vào ngày nào trong tuần?
+    - Blissful Pets mở cửa vào những ngày nào?
+    - Cửa hàng Blissful Pets mở cửa vào ngày nào?
+    - Blissful Pets mở cửa vào tất cả các ngày trong tuần phải không?
+
+- intent: appointment_required
+  examples: |
+    - Có cần phải đặt lịch hẹn trước không?
+    - Tôi có cần phải đặt lịch hẹn trước để sử dụng dịch vụ không?
+    - Blissful Pets yêu cầu đặt lịch trước không?
+    - Có cần đặt lịch hẹn trước để sử dụng dịch vụ của Blissful Pets không?
+
+- intent: holiday_closures
+  examples: |
+    - Blissful Pets đóng cửa vào các ngày lễ không?
+    - Cửa hàng Blissful Pets đóng cửa vào ngày lễ không?
+    - Blissful Pets có đóng cửa vào các ngày nghỉ tết không?
+    - Blissful Pets đóng cửa vào các ngày nghỉ lễ không?
+
+- intent: best_time
+  examples: |
+    - Thời gian tốt nhất để đến Blissful Pets là khi nào trong ngày?
+    - Khi nào là thời điểm tốt nhất để ghé thăm Blissful Pets?
+    - Thời gian nào là thích hợp nhất để đến Blissful Pets?
+    - Buổi nào là thời gian tốt nhất để đến Blissful Pets?
+
+- intent: evening_operation
+  examples: |
+    - Blissful Pets hoạt động vào buổi tối không?
+    - Blissful Pets có mở cửa vào buổi tối không?
+    - Blissful Pets làm việc vào buổi tối không?
+    - Blissful Pets có nhận thú cưng vào buổi tối không?
+
+- intent: weekend_operation
+  examples: |
+    - Blissful Pets hoạt động vào cuối tuần không?
+    - Blissful Pets có mở cửa vào cuối tuần không?
+    - Blissful Pets làm việc vào cuối tuần không?
+    - Blissful Pets có nhận thú cưng vào cuối tuần không?
+
+- intent: services_offered
+  examples: |
+    - Blissful Pets cung cấp những dịch vụ nào?
+    - Dịch vụ nào có sẵn tại Blissful Pets?
+    - Blissful Pets cung cấp những loại dịch vụ gì cho thú cưng?
+
+- intent: popular_service
+  examples: |
+    - Dịch vụ nào là phổ biến nhất tại Blissful Pets?
+    - Những dịch vụ nào được yêu thích nhất tại Blissful Pets?
+    - Dịch vụ nào là mức độ phổ biến nhất tại Blissful Pets?
+
+- intent: other_services
+  examples: |
+    - Có những dịch vụ chăm sóc thú cưng nào?
+    - Ngoài ra, Blissful Pets còn cung cấp những dịch vụ nào nữa?
+    - Có những dịch vụ chăm sóc thú cưng nào khác được cung cấp tại Blissful Pets?
+
+- intent: massage_service
+  examples: |
+    - Blissful Pets có dịch vụ massage cho thú cưng không?
+    - Thú cưng có thể được massage tại Blissful Pets không?
+    - Blissful Pets có dịch vụ massage chuyên nghiệp không?
+
+- intent: reservation_confirmation
+  examples: |
+    - Có cần gọi điện để xác nhận việc đặt lịch hẹn trước không?
+    - Làm thế nào để xác nhận đặt lịch hẹn trước?
+    - Blissful Pets cần xác nhận đặt lịch hẹn trước không?
+
+- intent: pet_type_acceptance
+  examples: |
+    - Blissful Pets chấp nhận loại thú cưng nào?
+    - Loại thú cưng nào được chấp nhận tại Blissful Pets?
+    - Blissful Pets có nhận mọi loại thú cưng không?
+
+- intent: pet_care_tips
+  examples: |
+    - Làm thế nào để chăm sóc thú cưng khi thời tiết thay đổi?
+    - Có cách nào để giữ thú cưng khỏe mạnh trong mùa đông không?
+    - Làm thế nào để chăm sóc thú cưng trong mùa hè?
+
+- intent: training_tips
+  examples: |
+    - Làm thế nào để huấn luyện thú cưng không ồn ào?
+    - Có cách nào để huấn luyện thú cưng không làm ồn ào?
+    - Làm thế nào để huấn luyện thú cưng mà không gây ra tiếng ồn?
+
+- intent: dental_care_tips
+  examples: |
+    - Làm thế nào để giữ gìn sức khỏe răng miệng cho thú cưng?
+    - Có cách nào để duy trì sức khỏe răng miệng cho thú cưng không?
+    - Làm thế nào để thú cưng giữ gìn sức khỏe răng miệng?
+
+- intent: safe_toys
+  examples: |
+    - Thú cưng của tôi có thể chơi với loại đồ chơi nào là an toàn nhất?
+    - Loại đồ chơi nào là phù hợp và an toàn cho thú cưng?
+    - Có đồ chơi nào là không độc hại cho thú cưng?
+
+- intent: wound_care
+  examples: |
+    - Làm thế nào để phát hiện và xử lý vết thương cho thú cưng?
+    - Cách nhận biết và điều trị vết thương cho thú cưng là gì?
+    - Làm thế nào để xử lý vết thương cho thú cưng của bạn?
+
+- intent: grooming_tips
+  examples: |
+    - Làm thế nào để giữ lông của thú cưng sạch sẽ và không rối?
+    - Có cách nào để làm sạch và chải lông cho thú cưng không?
+    - Làm thế nào để duy trì lông của thú cưng luôn bóng mượt?
+
+- intent: thank_you
+  examples: |
+    - Cảm ơn bạn đã giải đáp.
+    - Cảm ơn bạn đã giải đáp mọi thắc mắc của tôi.
+    - Rất cảm ơn về sự giúp đỡ của bạn.
+    - Xin cảm ơn Blissful Pets về thông tin hữu ích.
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Cảm ơn.
+    - Hẹn gặp lại.
+    - Cảm ơn và hẹn gặp lại.
+    - Hẹn gặp lại vào lần sau.
+    - Chúc bạn một ngày tốt lành và xin chào tạm biệt!
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+# nlu:
+# - intent: greet
+#   examples: |
+#     - hey
+#     - hello
+#     - hi
+#     - good morning
+#     - good evening
+#     - good afternoon
+#     - Xin chào
+#     - Chào
+#     - Chào bot
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+# - intent: goodbye
+#   examples: |
+#     - cu
+#     - good by
+#     - cee you later
+#     - good night
+#     - bye
+#     - goodbye
+#     - have a nice day
+#     - see you around
+#     - bye bye
+#     - see you later
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+# - intent: affirm
+#   examples: |
+#     - yes
+#     - y
+#     - indeed
+#     - of course
+#     - that sounds good
+#     - correct
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+# - intent: deny
+#   examples: |
+#     - no
+#     - n
+#     - never
+#     - I don't think so
+#     - don't like that
+#     - no way
+#     - not really
+
+# - intent: mood_great
+#   examples: |
+#     - perfect
+#     - great
+#     - amazing
+#     - feeling like a king
+#     - wonderful
+#     - I am feeling very good
+#     - I am great
+#     - I am amazing
+#     - I am going to save the world
+#     - super stoked
+#     - extremely good
+#     - so so perfect
+#     - so good
+#     - so perfect
+
+# - intent: mood_unhappy
+#   examples: |
+#     - my day was horrible
+#     - I am sad
+#     - I don't feel very well
+#     - I am disappointed
+#     - super sad
+#     - I'm so sad
+#     - sad
+#     - very sad
+#     - unhappy
+#     - not good
+#     - not very good
+#     - extremly sad
+#     - so saad
+#     - so sad
+
+# - intent: bot_challenge
+#   examples: |
+#     - are you a bot?
+#     - are you a human?
+#     - am I talking to a bot?
+#     - am I talking to a human?

@@ -1,13 +1,131 @@
 version: "3.1"
 
-rules:
 
-- rule: Say goodbye anytime the user says goodbye
+rules:
+- rule: User greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: User asks about opening hours
+  steps:
+  - intent: opening_hours
+  - action: utter_opening_hours
+
+- rule: User asks about working hours
+  steps:
+  - intent: working_hours
+  - action: utter_working_hours
+
+- rule: User asks about operation days
+  steps:
+  - intent: operation_days
+  - action: utter_operation_days
+
+- rule: User asks if appointment is required
+  steps:
+  - intent: appointment_required
+  - action: utter_appointment_required
+
+- rule: User asks about holiday closures
+  steps:
+  - intent: holiday_closures
+  - action: utter_holiday_closures
+
+- rule: User asks about best time to visit
+  steps:
+  - intent: best_time
+  - action: utter_best_time
+
+- rule: User asks about evening operation
+  steps:
+  - intent: evening_operation
+  - action: utter_evening_operation
+
+- rule: User asks about weekend operation
+  steps:
+  - intent: weekend_operation
+  - action: utter_weekend_operation
+
+- rule: User asks about services offered
+  steps:
+  - intent: services_offered
+  - action: utter_services
+
+- rule: User asks about popular service
+  steps:
+  - intent: popular_service
+  - action: utter_popular_service
+
+- rule: User asks about other services
+  steps:
+  - intent: other_services
+  - action: utter_other_services
+
+- rule: User asks about massage service
+  steps:
+  - intent: massage_service
+  - action: utter_massage_service
+
+- rule: User asks about reservation confirmation
+  steps:
+  - intent: reservation_confirmation
+  - action: utter_reservation_confirmation
+
+- rule: User asks about pet type acceptance
+  steps:
+  - intent: pet_type_acceptance
+  - action: utter_pet_type_acceptance
+
+- rule: User asks for pet care tips
+  steps:
+  - intent: pet_care_tips
+  - action: utter_pet_care_tips
+
+- rule: User asks for training tips
+  steps:
+  - intent: training_tips
+  - action: utter_training_tips
+
+- rule: User asks for dental care tips
+  steps:
+  - intent: dental_care_tips
+  - action: utter_dental_care_tips
+
+- rule: User asks for safe toys
+  steps:
+  - intent: safe_toys
+  - action: utter_safe_toys
+
+- rule: User asks for wound care
+  steps:
+  - intent: wound_care
+  - action: utter_wound_care
+
+- rule: User asks for grooming tips
+  steps:
+  - intent: grooming_tips
+  - action: utter_grooming_tips
+
+- rule: User says thank you
+  steps:
+  - intent: thank_you
+  - action: utter_you_are_welcome
+
+- rule: User says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+
+# rules:
+
+# - rule: Say goodbye anytime the user says goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - rule: Say 'I am a bot' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot

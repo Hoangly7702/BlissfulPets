@@ -1,34 +1,141 @@
 version: "3.1"
 
+
+
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+- greet
+- opening_hours
+- working_hours
+- operation_days
+- appointment_required
+- holiday_closures
+- best_time
+- evening_operation
+- weekend_operation
+- services_offered
+- popular_service
+- other_services
+- massage_service
+- reservation_confirmation
+- pet_type_acceptance
+- pet_care_tips
+- training_tips
+- dental_care_tips
+- safe_toys
+- wound_care
+- grooming_tips
+- thank_you
+- goodbye
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  - text: "Chào bạn! Blissful Pets có thể giúp gì cho bạn hôm nay?"
+  utter_opening_hours:
+  - text: "Blissful Pets mở cửa từ 8 giờ sáng đến 6 giờ chiều hàng ngày."
+  utter_working_hours:
+  - text: "Giờ làm việc của Blissful Pets là từ thứ Hai đến Chủ Nhật."
+  utter_operation_days:
+  - text: "Blissful Pets hoạt động vào tất cả các ngày trong tuần."
+  utter_appointment_required:
+  - text: "Đặt lịch trước là lựa chọn tốt để đảm bảo dịch vụ tốt nhất cho thú cưng của bạn."
+  utter_holiday_closures:
+  - text: "Blissful Pets sẽ thông báo trước nếu có kế hoạch đóng cửa vào các ngày lễ."
+  utter_best_time:
+  - text: "Buổi sáng thường là thời gian tốt nhất để đến Blissful Pets vì lịch đặt lịch hẹn thường sẽ không quá đông."
+  utter_evening_operation:
+  - text: "Hiện tại, Blissful Pets không nhận thú cưng vào buổi tối."
+  utter_weekend_operation:
+  - text: "Blissful Pets mở cửa cả cuối tuần để phục vụ các bạn và thú cưng của bạn vào những ngày rảnh rỗi."
+  utter_services:
+  - text: "Chúng tôi cung cấp các dịch vụ như cắt tỉa lông, vệ sinh tai, tắm gội, cắt móng và nhiều dịch vụ khác."
+  utter_popular_service:
+  - text: "Dịch vụ tắm gội và cắt tỉa lông là những dịch vụ được yêu thích nhất tại Blissful Pets."
+  utter_other_services:
+  - text: "Chúng tôi có các dịch vụ tắm gội, cắt tỉa lông, làm sạch răng, và nhiều hơn nữa để giữ thú cưng của bạn luôn khỏe mạnh và sạch sẽ."
+  utter_massage_service:
+  - text: "Đúng vậy! Chúng tôi cung cấp dịch vụ massage chuyên nghiệp để giúp thú cưng của bạn giảm căng thẳng và tăng cường sức khỏe."
+  utter_reservation_confirmation:
+  - text: "Việc xác nhận đặt lịch hẹn trước có thể giúp chúng tôi chuẩn bị tốt nhất cho thú cưng của bạn."
+  utter_pet_type_acceptance:
+  - text: "Chúng tôi chủ yếu chăm sóc cho chó và mèo, nhưng chúng tôi cũng chào đón các loại thú cưng khác. Hãy liên hệ với chúng tôi để biết thêm chi tiết."
+  utter_pet_care_tips:
+  - text: "Trong mùa đông, hãy chú ý giữ ấm cho thú cưng bằng cách sử dụng áo ấm và hạn chế thời gian ra ngoài. Trong mùa hè, đảm bảo thú cưng luôn có nước và nơi nghỉ mát."
+  utter_training_tips:
+  - text: "Sử dụng phương pháp tích cực và khen ngợi khi thú cưng hành động đúng, cũng như định hình hành vi không mong muốn bằng cách từ chối sự chú ý khi họ hành động xấu."
+  utter_dental_care_tips:
+  - text: "Đảm bảo rằng thú cưng của bạn có chế độ chăm sóc răng miệng hợp lý, bao gồm cung cấp đồ chơi gặm và xin tư vấn từ bác sĩ thú y về cách làm sạch răng cho thú cưng."
+  utter_safe_toys:
+  - text: "Đồ chơi có kích thước phù hợp và được làm từ vật liệu không độc hại là lựa chọn tốt nhất cho thú cưng của bạn. Hãy tránh sử dụng đồ chơi có thể gây nguy hiểm hoặc nuốt phải."
+  utter_wound_care:
+  - text: "Hãy kiểm tra thường xuyên cho thú cưng của bạn và nếu phát hiện vết thương, sạch sẽ nó và đưa thú cưng đến bác sĩ thú y nếu cần."
+  utter_grooming_tips:
+  - text: "Chải lông thú cưng hàng ngày và sử dụng sản phẩm chăm sóc lông phù hợp để giữ lông sạch sẽ và không rối."
+  utter_you_are_welcome:
+  - text: "Rất vui được phục vụ bạn."
   utter_goodbye:
-  - text: "Bye"
+  - text: "Hẹn gặp lại bạn vào lần sau!"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+actions:
+- utter_greet
+- utter_opening_hours
+- utter_working_hours
+- utter_operation_days
+- utter_appointment_required
+- utter_holiday_closures
+- utter_best_time
+- utter_evening_operation
+- utter_weekend_operation
+- utter_services
+- utter_popular_service
+- utter_other_services
+- utter_massage_service
+- utter_reservation_confirmation
+- utter_pet_type_acceptance
+- utter_pet_care_tips
+- utter_training_tips
+- utter_dental_care_tips
+- utter_safe_toys
+- utter_wound_care
+- utter_grooming_tips
+- utter_you_are_welcome
+- utter_goodbye
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+
+
+
+# intents:
+#   - greet
+#   - goodbye
+#   - affirm
+#   - deny
+#   - mood_great
+#   - mood_unhappy
+#   - bot_challenge
+
+# responses:
+#   utter_greet:
+#   - text: "Hey! How are you?"
+
+#   utter_cheer_up:
+#   - text: "Here is something to cheer you up:"
+#     image: "https://i.imgur.com/nGF1K8f.jpg"
+
+#   utter_did_that_help:
+#   - text: "Did that help you?"
+
+#   utter_happy:
+#   - text: "Great, carry on!"
+
+#   utter_goodbye:
+#   - text: "Bye"
+
+#   utter_iamabot:
+#   - text: "I am a bot, powered by Rasa."
+
+# session_config:
+#   session_expiration_time: 60
+#   carry_over_slots_to_new_session: true

@@ -1,91 +1,232 @@
 #### This file contains tests to evaluate that your bot behaves as expected.
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
+# stories:
+# - story: happy path 1
+#   steps:
+#   - user: |
+#       hello there!
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       amazing
+#     intent: mood_great
+#   - action: utter_happy
+
+# - story: happy path 2
+#   steps:
+#   - user: |
+#       hello there!
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       amazing
+#     intent: mood_great
+#   - action: utter_happy
+#   - user: |
+#       bye-bye!
+#     intent: goodbye
+#   - action: utter_goodbye
+
+# - story: sad path 1
+#   steps:
+#   - user: |
+#       hello
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       not good
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       yes
+#     intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - user: |
+#       hello
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       not good
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       not really
+#     intent: deny
+#   - action: utter_goodbye
+
+# - story: sad path 3
+#   steps:
+#   - user: |
+#       hi
+#     intent: greet
+#   - action: utter_greet
+#   - user: |
+#       very terrible
+#     intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - user: |
+#       no
+#     intent: deny
+#   - action: utter_goodbye
+
+# - story: say goodbye
+#   steps:
+#   - user: |
+#       bye-bye!
+#     intent: goodbye
+#   - action: utter_goodbye
+
+# - story: bot challenge
+#   steps:
+#   - user: |
+#       are you a bot?
+#     intent: bot_challenge
+#   - action: utter_iamabot
+
+
+version: "2.0"
+
 stories:
-- story: happy path 1
+- story: Greet and Inquire about Services
   steps:
   - user: |
-      hello there!
+      Xin chào
     intent: greet
-  - action: utter_greet
+  - action: utter_greeting
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      Blissful Pets mở cửa vào những giờ nào?
+    intent: opening_hours
+  - action: utter_opening_hours
+  - user: |
+      Giờ làm việc của Blissful Pets là bao nhiêu?
+    intent: working_hours
+  - action: utter_working_hours
+  - user: |
+      Blissful Pets hoạt động vào ngày nào trong tuần?
+    intent: operation_days
+  - action: utter_operation_days
+  - user: |
+      Có cần đặt lịch hẹn trước để sử dụng dịch vụ của Blissful Pets không?
+    intent: appointment_required
+  - action: utter_appointment_required
+  - user: |
+      Blissful Pets có mở cửa vào ngày lễ không?
+    intent: holiday_closures
+  - action: utter_holiday_closures
+  - user: |
+      Thời gian tốt nhất để đến Blissful Pets là khi nào trong ngày?
+    intent: best_time
+  - action: utter_best_time
+  - user: |
+      Blissful Pets có đóng cửa vào các ngày nghỉ tết không?
+    intent: holiday_closures
+  - action: utter_holiday_closures
+  - user: |
+      Có cần gọi điện để xác nhận việc đặt lịch hẹn trước không?
+    intent: reservation_confirmation
+  - action: utter_reservation_confirmation
+  - user: |
+      Blissful Pets có nhận thú cưng vào buổi tối không?
+    intent: evening_operation
+  - action: utter_evening_operation
+  - user: |
+      Blissful Pets có mở cửa cả cuối tuần không?
+    intent: weekend_operation
+  - action: utter_weekend_operation
+  - user: |
+      Blissful Pets cung cấp những dịch vụ nào cho thú cưng?
+    intent: services_offered
+  - action: utter_services
+  - user: |
+      Dịch vụ nào là phổ biến nhất tại Blissful Pets?
+    intent: popular_service
+  - action: utter_popular_service
+  - user: |
+      Có những dịch vụ chăm sóc thú cưng nào?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Dịch vụ massage có sẵn không?
+    intent: massage_service
+  - action: utter_massage_service
+  - user: |
+      Blissful Pets có nhận đặt lịch trước không?
+    intent: reservation_confirmation
+  - action: utter_reservation_confirmation
+  - user: |
+      Blissful Pets có dịch vụ cắt tỉa lông không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có dịch vụ nhuộm lông cho thú cưng không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có thực hiện vệ sinh tai cho thú cưng không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có cung cấp dịch vụ cắt móng cho thú cưng không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có dịch vụ vận chuyển thú cưng không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có giá cả hợp lý không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có nhận vệ sinh răng cho thú cưng không?
+    intent: other_services
+  - action: utter_other_services
+  - user: |
+      Blissful Pets có phục vụ các loại thú cưng lạ không?
+    intent: pet_type_acceptance
+  - action: utter_pet_type_acceptance
 
-- story: happy path 2
+- story: Pet Care Tips
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
+      Làm thế nào để chăm sóc thú cưng khi thời tiết thay đổi?
+    intent: pet_care_tips
+  - action: utter_pet_care_tips
   - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
+      Có cách nào để huấn luyện thú cưng của tôi không ồn ào?
+    intent: training_tips
+  - action: utter_training_tips
   - user: |
-      bye-bye!
+      Làm thế nào để thú cưng của tôi giữ gìn sức khỏe răng miệng?
+    intent: dental_care_tips
+  - action: utter_dental_care_tips
+  - user: |
+      Thú cưng của tôi có thể chơi với loại đồ chơi nào là an toàn nhất?
+    intent: safe_toys
+  - action: utter_safe_toys
+  - user: |
+      Làm thế nào để phát hiện và xử lý vết thương cho thú cưng của tôi?
+    intent: wound_care
+  - action: utter_wound_care
+  - user: |
+      Làm thế nào để giữ lông của thú cưng sạch sẽ và không rối?
+    intent: grooming_tips
+  - action: utter_grooming_tips
+
+- story: Thank You and Goodbye
+  steps:
+  - user: |
+      Cảm ơn bạn đã giải đáp.
+    intent: thank_you
+  - action: utter_you_are_welcome
+  - user: |
+      Cảm ơn.
     intent: goodbye
   - action: utter_goodbye
-
-- story: sad path 1
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
-
-- story: sad path 3
-  steps:
-  - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
-
-- story: say goodbye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
-
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
