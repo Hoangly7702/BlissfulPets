@@ -97,6 +97,7 @@ responses:
 
   utter_you_are_welcome:
   - text: "Rất vui được phục vụ bạn."
+  - text: "Bạn có cần thêm thông tin gì không?"
 
   utter_goodbye:
   - text: "Hẹn gặp lại bạn vào lần sau!"

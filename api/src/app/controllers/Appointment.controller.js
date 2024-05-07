@@ -184,6 +184,8 @@ export const AddAppointment = async (req, res) => {
   const manyService = req.body.Services;
   const namePet = req.body.namePet;
 
+  
+
   Staff.findOne({ _id: staffId }).then((staff) => {
     const date = staff.Dates.id(dateId);
     const slot = date.slots.id(slotId);

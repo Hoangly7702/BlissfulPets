@@ -90,5 +90,5 @@
   outline: none;
 }
 .list-information button {
-  width: fit-content;
+  /* width: fit-content; */
 }

@@ -273,6 +273,8 @@ export default function Appointment ()
 
 	const submitBooking = async () =>
 	{
+		
+
 		const data = {
 			StaffId: staffId,
 			DateId: dateId,
