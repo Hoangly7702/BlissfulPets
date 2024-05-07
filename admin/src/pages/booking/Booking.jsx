@@ -41,6 +41,7 @@ export default function Booking ()
 	const [ step4, setStep4 ] = useState( false );
 	const [ open, setOpen ] = useState( false );
 
+	
 	const { user } = useContext(AuthContext);
 
 	const handleStep1 = () =>
@@ -266,6 +267,19 @@ export default function Booking ()
 		);
 	};
 
+
+	const updateAppointmentStatus = async (appointmentId) => {
+        try {
+            const res = await axios.put(
+                `http://localhost:8800/api/appointment/update/${appointmentId}`,
+                { status: "complete" }
+            );
+            console.log("Appointment status updated successfully");
+        } catch (error) {
+            console.error("Failed to update appointment status", error);
+        }
+    }
+
 	const [dataReceipt, setDataReceipt] = useState(null)
 
 	const CreateReceipt = ( { params } ) =>
@@ -306,9 +320,13 @@ export default function Booking ()
 							Email:  params.row?.Email,
 							Telephone: params.row?.TelephoneCustomer,
 							Name_Customer: params.row?.NameCustomer,
-							Staff_Name: user?.Name
+							// Staff_Name: user?.Name
+							// Status: params.row?.status,
+							Staff_Name: params.row?.Staff,
+							Pet: params.row?.namePet
 						}
 						setDataReceipt(data);
+						
 						// handleCreateReceipt(
 						// 	data
 						// );
@@ -398,7 +416,10 @@ export default function Booking ()
 
 	return (
 		<div className="container">
-			<ModalReceipt open={open} onClose={() => setOpen(false)} form={dataReceipt} />
+			<ModalReceipt 
+				open={open} 
+				onClose={() => setOpen(false)} 
+				form={dataReceipt} />
 			<div className="left-container">
 				<Sidebar />
 			</div>

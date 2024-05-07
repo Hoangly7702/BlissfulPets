@@ -95,9 +95,9 @@ export default function About ()
 					<SlideImage reviews={ review } setReview={setReview}/>
 				</div>
 			</div>
-			<div className="telephone mb-4">
+			{/* <div className="telephone mb-4">
 				<Telephone />
-			</div>
+			</div> */}
 			<Scroll />
 			<Footer />
 		</div>

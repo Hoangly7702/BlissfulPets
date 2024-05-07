@@ -30,12 +30,18 @@ export default function History() {
       {
         field: "slotTime",
         headerName: "Slot",
-        width: 100,
+        width: 70,
       },
       {
         field: "Services",
         headerName: "Services",
-        width: 120,
+        width: 180,
+      },
+
+      {
+        field: "namePet",
+        headerName: "Pet",
+        width: 70,
       },
       {
         field: "Staff",

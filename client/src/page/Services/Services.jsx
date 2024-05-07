@@ -189,7 +189,7 @@ export default function Services ()
 								} ) }
 								{ !showLoading && item?.serviceData?.length > 0 && item?.serviceData.map( ( e, index ) =>
 								{
-									return <div className="col-md-6 col-12" key={ index }>
+									return <div className="service-category" key={ index }>
 										<Category
 
 											image={ e?.Image }

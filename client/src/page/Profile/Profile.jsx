@@ -96,11 +96,19 @@ export default function Profile() {
     // state columns of table
     const columns = useMemo(
       () => [
+
+        {
+          field: "Pet",
+          headerName: "Pet",
+          width: 70,
+        },
+
         {
           field: "Staff_Name",
           headerName: "Staff",
           width: 100,
         },
+
         {
           field: "Services",
           headerName: "Services",

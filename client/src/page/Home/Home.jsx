@@ -68,7 +68,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<section className="section-2">
+			{/* <section className="section-2">
 				<div className="service-container ">
 					{service.map((value, index) => (
 						<>
@@ -80,7 +80,7 @@ export default function Home() {
 						</>
 					))}
 				</div>
-			</section>
+			</section> */}
 
 			<div className="pricing-container my-4">
 				<span className="subheading"> pricing</span>

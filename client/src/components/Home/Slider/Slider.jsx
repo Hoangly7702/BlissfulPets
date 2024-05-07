@@ -12,12 +12,14 @@ export function SliderHome() {
         we will make <span> YOUR </span> <br /> <span> STYLE</span> of your
         dreams
       </h1>
+
+      
       <div className="text-p">
-        <p>
-          A small river named Duden flows by their place and supplies it <br />{" "}
-          with the necessary regelialia. It is a paradisematic country, <br />{" "}
-          in which roasted parts of sentences fly into your mouth.
+        <p style={{marginRight:"40px", textAlign:"justify"}}>
+        Let us create the style of your dreams for your beloved pet. Just as a gentle river named Duden flows by our sanctuary, we provide the essential regelialia to pamper your furry companion. Our oasis is a paradisematic haven, where every moment is adorned with the delight of roasted parts of sentences flying into your senses.
         </p>
+
+        
         <button className="link-about">
           <Link to="/about" className="link">
             Learn more about us

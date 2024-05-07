@@ -10,6 +10,9 @@ const ReceiptsSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    Pet:{
+      type: String,
+    },
     Email: {
       type: String,
     },

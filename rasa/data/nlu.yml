@@ -143,14 +143,16 @@ nlu:
 
 - intent: thank_you
   examples: |
+    - Tôi cám ơn
     - Cảm ơn bạn đã giải đáp.
     - Cảm ơn bạn đã giải đáp mọi thắc mắc của tôi.
     - Rất cảm ơn về sự giúp đỡ của bạn.
     - Xin cảm ơn Blissful Pets về thông tin hữu ích.
+    - Cảm ơn nhiều
 
 - intent: goodbye
   examples: |
-    - Cảm ơn.
+  
     - Hẹn gặp lại.
     - Cảm ơn và hẹn gặp lại.
     - Hẹn gặp lại vào lần sau.

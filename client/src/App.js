@@ -24,6 +24,7 @@ import Booking from "./page/Booking/Booking";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+
 function App() {
   const { user } = useContext(AuthContext);
   return (

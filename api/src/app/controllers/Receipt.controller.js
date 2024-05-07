@@ -10,71 +10,70 @@ export const CreateReceipt = async (req, res) => {
   const input = req.body;
   const manyService = input.Services;
 
-  // find service when customer go to barber to get price
+  // find service when customer goes to the barber to get the price
   const service = await Service.find({
-    Name_Service: { $in: manyService },
+      Name_Service: { $in: manyService },
   });
+
   // sum total price
-  const length = service.length;
-  let totalPrice = 0;
-  for (let i = 0; i < length; i++) {
-    const price = service[i].Price;
-    totalPrice += price;
-  }
-  //the final price to charge the customer
+  let totalPrice = service.reduce((acc, curr) => acc + curr.Price, 0);
+
+  // calculate the final price to charge the customer
   const discount = input.Discount;
   const total = (totalPrice * (100 - discount)) / 100;
-  // check mail in database
-  // if check === null  => update collect +=1
 
-  const check = await Customer.findOne({ Email: input.Email });
-  if (check !== null) {
-    const update = await Customer.findOneAndUpdate(
-      { Email: input.Email },
-      { $inc: { Collect: 1 } }
-    );
+  // check if the customer's email exists in the database
+  let check = await Customer.findOne({ Email: input.Email });
+
+  // if check === null => create a new customer
+  if (!check) {
+      try {
+          const salt = bcryptjs.genSaltSync(10);
+          const hashPassword = bcryptjs.hashSync(input.Telephone, salt);
+          const newCus = new Customer({
+              Name_Customer: input.Name_Customer,
+              Telephone: input.Telephone,
+              Email: input.Email,
+              Password: hashPassword,
+              Collect: 1,
+          });
+          await newCus.save();
+      } catch (error) {
+          console.log(error);
+      }
+  } else {
+      // if check !== null => update collect +=1
+      await Customer.findOneAndUpdate(
+          { Email: input.Email },
+          { $inc: { Collect: 1 } }
+      );
   }
-  // if  check === null => create new customer
-  if (check === null) {
-    try {
-      const salt = bcryptjs.genSaltSync(10);
-      const pass = await input.Telephone;
-      const hashPassword = bcryptjs.hashSync(pass, salt);
-      const newCus = new Customer({
-        Name_Customer: input.Name_Customer,
-        Telephone: input.Telephone,
-        Email: input.Email,
-        Password: hashPassword,
-        Collect: 1,
-      });
-      const save = await newCus.save();
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  // save information to database
+
+  // save information to the database
   try {
-    const newReceipt = new Receipt({
-      Staff_Name: input.Staff_Name,
-      Name_Customer: input.Name_Customer,
-      Telephone: input.Telephone,
-      Email: input.Email,
-      Services: manyService,
-      SumPrice: totalPrice,
-      Discount: discount,
-      Total: total,
-    });
+      const newReceipt = new Receipt({
+          Staff_Name: input.Staff_Name,
+          Name_Customer: input.Name_Customer,
+          Telephone: input.Telephone,
+          Email: input.Email,
+          Services: manyService,
+          SumPrice: totalPrice,
+          Discount: discount,
+          Total: total,
+          Pet: input.Pet, // Add Pet field
+      });
 
-    const save = await newReceipt.save();
-    responseType.message = "Create  successfully";
-    responseType.status = 200;
-    responseType.value = save;
+      const save = await newReceipt.save();
+      responseType.message = "Create successfully";
+      responseType.status = 200;
+      responseType.value = save;
   } catch (error) {
-    responseType.status = 404;
-    responseType.message = "Create service failed";
+      responseType.status = 404;
+      responseType.message = "Create service failed";
   }
   res.json(responseType);
 };
+
 
 // complete
 export const GetByDateChoose = async (req, res) => {
