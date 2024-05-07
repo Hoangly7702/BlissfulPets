@@ -13,77 +13,70 @@ import ChartAppointment from "../../components/Charts/ChartAppointment";
 import { AuthContext } from "../../context/AuthContext";
 import ModalReceipt from "../../components/Modal/ModalReceipt";
 
-export default function Booking ()
-{
-	const [ rowId, setRowId ] = useState( "" );
+export default function Booking() {
+	const [rowId, setRowId] = useState("");
 	const current = new Date();
 	// current date
-	const currentDate = moment( new Date() ).format( "yyyy-MM-DD" );
-	const nextDate = moment( currentDate ).add( 1, "days" ).format( "yyyy-MM-DD" );
+	const currentDate = moment(new Date()).format("yyyy-MM-DD");
+	const nextDate = moment(currentDate).add(1, "days").format("yyyy-MM-DD");
 	// data current day
-	const [ dataDayCurrent, setDataDayCurrent ] = useState( [] );
+	const [dataDayCurrent, setDataDayCurrent] = useState([]);
 	//data previous day
-	const [ dataDayPrevious, setDataDayPrevious ] = useState( [] );
+	const [dataDayPrevious, setDataDayPrevious] = useState([]);
 	// data current month
-	const [ dataCurrentMonth, setDataCurrentMonth ] = useState( [] );
+	const [dataCurrentMonth, setDataCurrentMonth] = useState([]);
 	// data list range date
-	const [ dataDayRange, setDataDayRange ] = useState( [] );
+	const [dataDayRange, setDataDayRange] = useState([]);
 	// date start and date end of range date
-	const [ dateStart, setDateStart ] = useState( moment().format( "yyyy-MM-DD" ) );
-	const [ dateEnd, setDateEnd ] = useState( moment().format( "yyyy-MM-DD" ) );
+	const [dateStart, setDateStart] = useState(moment().format("yyyy-MM-DD"));
+	const [dateEnd, setDateEnd] = useState(moment().format("yyyy-MM-DD"));
 	// current date
-	const [ step1, setStep1 ] = useState( true );
+	const [step1, setStep1] = useState(true);
 	// current week
-	const [ step2, setStep2 ] = useState( false );
+	const [step2, setStep2] = useState(false);
 	// current month
-	const [ step3, setStep3 ] = useState( false );
+	const [step3, setStep3] = useState(false);
 
-	const [ step4, setStep4 ] = useState( false );
-	const [ open, setOpen ] = useState( false );
+	const [step4, setStep4] = useState(false);
+	const [open, setOpen] = useState(false);
 
-	
+
 	const { user } = useContext(AuthContext);
 
-	const handleStep1 = () =>
-	{
-		setStep1( true );
-		setStep2( false );
-		setStep3( false );
-		setStep4( false );
+	const handleStep1 = () => {
+		setStep1(true);
+		setStep2(false);
+		setStep3(false);
+		setStep4(false);
 	};
-	const handleStep2 = () =>
-	{
-		setStep2( true );
-		setStep1( false );
-		setStep3( false );
-		setStep4( false );
+	const handleStep2 = () => {
+		setStep2(true);
+		setStep1(false);
+		setStep3(false);
+		setStep4(false);
 	};
-	const handleStep3 = () =>
-	{
-		setStep2( false );
-		setStep1( false );
-		setStep3( true );
-		setStep4( false );
+	const handleStep3 = () => {
+		setStep2(false);
+		setStep1(false);
+		setStep3(true);
+		setStep4(false);
 	};
 
-	const handleStep4 = () =>
-	{
-		setStep2( false );
-		setStep1( false );
-		setStep4( true );
-		setStep3( false );
+	const handleStep4 = () => {
+		setStep2(false);
+		setStep1(false);
+		setStep4(true);
+		setStep3(false);
 	};
 
 	// date for previous month
 
-	const start = `${ current.getFullYear() }-${ current.getMonth() + 1 }-01`;
+	const start = `${current.getFullYear()}-${current.getMonth() + 1}-01`;
 
-	const end = `${ current.getFullYear() }-${ current.getMonth() + 1 }-30`;
+	const end = `${current.getFullYear()}-${current.getMonth() + 1}-30`;
 
-	const FetchDataAfterDelete = async () =>
-	{
-		const fetchDayCurrent = async () =>
-		{
+	const FetchDataAfterDelete = async () => {
+		const fetchDayCurrent = async () => {
 			const data = {
 				Date: currentDate,
 			};
@@ -91,12 +84,11 @@ export default function Booking ()
 				"http://localhost:8800/api/appointment/all-pending",
 				data
 			);
-			setDataDayCurrent( res.data.value );
+			setDataDayCurrent(res.data.value);
 		};
 		fetchDayCurrent();
 
-		const fetchDatePrevious = async () =>
-		{
+		const fetchDatePrevious = async () => {
 			const data = {
 				Date: nextDate,
 			};
@@ -105,12 +97,11 @@ export default function Booking ()
 				"http://localhost:8800/api/appointment/all-pending",
 				data
 			);
-			setDataDayPrevious( res.data.value );
+			setDataDayPrevious(res.data.value);
 		};
 		fetchDatePrevious();
 
-		const fetchCurrentMonth = async () =>
-		{
+		const fetchCurrentMonth = async () => {
 			const data = {
 				Start: start,
 				End: end,
@@ -121,16 +112,14 @@ export default function Booking ()
 				data
 			);
 
-			setDataCurrentMonth( res.data.value );
+			setDataCurrentMonth(res.data.value);
 		};
 		fetchCurrentMonth();
 	};
 
-	useEffect( () =>
-	{
+	useEffect(() => {
 		//fetch data of current date
-		const fetchDayCurrent = async () =>
-		{
+		const fetchDayCurrent = async () => {
 			const data = {
 				Date: currentDate,
 			};
@@ -138,17 +127,15 @@ export default function Booking ()
 				"http://localhost:8800/api/appointment/all-pending",
 				data
 			);
-			console.log( res );
-			setDataDayCurrent( res.data.value );
+			console.log(res);
+			setDataDayCurrent(res.data.value);
 		};
 		fetchDayCurrent();
-	}, [] );
+	}, []);
 
-	useEffect( () =>
-	{
+	useEffect(() => {
 		// fetch data for previous date
-		const fetchDatePrevious = async () =>
-		{
+		const fetchDatePrevious = async () => {
 			const data = {
 				Date: nextDate,
 			};
@@ -157,16 +144,14 @@ export default function Booking ()
 				"http://localhost:8800/api/appointment/all-pending",
 				data
 			);
-			setDataDayPrevious( res.data.value );
+			setDataDayPrevious(res.data.value);
 		};
 		fetchDatePrevious();
-	}, [] );
+	}, []);
 
-	useEffect( () =>
-	{
+	useEffect(() => {
 		// fetch current month
-		const fetchCurrentMonth = async () =>
-		{
+		const fetchCurrentMonth = async () => {
 			const data = {
 				Start: start,
 				End: end,
@@ -177,26 +162,22 @@ export default function Booking ()
 				data
 			);
 
-			setDataCurrentMonth( res.data.value );
+			setDataCurrentMonth(res.data.value);
 		};
 		fetchCurrentMonth();
-	}, [] );
+	}, []);
 
-	const DateStartHandle = async ( e ) =>
-	{
-		setDateStart( moment( new Date( e.target.value ) ).format( "YYYY-MM-DD" ) );
+	const DateStartHandle = async (e) => {
+		setDateStart(moment(new Date(e.target.value)).format("YYYY-MM-DD"));
 	};
 
-	const DateEndHandle = async ( e ) =>
-	{
-		setDateEnd( moment( new Date( e.target.value ) ).format( "YYYY-MM-DD" ) );
+	const DateEndHandle = async (e) => {
+		setDateEnd(moment(new Date(e.target.value)).format("YYYY-MM-DD"));
 		handleStep4();
 	};
 
-	const submitHandle = async () =>
-	{
-		try
-		{
+	const submitHandle = async () => {
+		try {
 			const data = {
 				Start: dateStart,
 				End: dateEnd,
@@ -206,23 +187,20 @@ export default function Booking ()
 				"http://localhost:8800/api/appointment/time-range",
 				data
 			);
-			setDataDayRange( res.data.value );
-		} catch ( error )
-		{
-			console.log( error );
+			setDataDayRange(res.data.value);
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
-	const Delete = ( { params } ) =>
-	{
+	const Delete = ({ params }) => {
 		const DeleteHandle = async (
 			idAppointment,
 			idStaff,
 			idDate,
 			idSlot,
 			email
-		) =>
-		{
+		) => {
 			const status = "cancel";
 			const data = {
 				DateId: idDate,
@@ -231,110 +209,112 @@ export default function Booking ()
 				Status: status,
 				Email: email,
 			};
-			try
-			{
+			try {
 				const res = await axios.put(
 					"http://localhost:8800/api/appointment/update-cancel/" +
 					idAppointment,
 					data
 				);
-				toast.success( "Successful cancellation of appointment" );
+				toast.success("Successful cancellation of appointment");
 				FetchDataAfterDelete();
-			} catch ( error )
-			{
-				toast.error( "Cancellation of appointment failed" );
+			} catch (error) {
+				toast.error("Cancellation of appointment failed");
 			}
 		};
 		return (
 			<div className="delete">
-				<button
-					className="button-delete"
-					onClick={ () =>
-					{
-						if ( window.confirm( "Are you sure to cancel this appointment?" ) )
-							DeleteHandle(
-								params.row._id,
-								params.row.StaffId,
-								params.row.DateId,
-								params.row.SlotId,
-								params.row.Email
-							);
-					} }
-				>
-					<MdDeleteOutline className="icon-delete" />
-				</button>
+				{/* Kiểm tra xem người dùng có phải là admin không */}
+				{user.isAdmin && (
+					<button
+						className="button-delete"
+						onClick={() => {
+							if (window.confirm("Are you sure to cancel this appointment?"))
+								DeleteHandle(
+									params.row._id,
+									params.row.StaffId,
+									params.row.DateId,
+									params.row.SlotId,
+									params.row.Email
+								);
+						}}
+					>
+						<MdDeleteOutline className="icon-delete" />
+					</button>
+
+				)}
 			</div>
 		);
 	};
 
 
 	const updateAppointmentStatus = async (appointmentId) => {
-        try {
-            const res = await axios.put(
-                `http://localhost:8800/api/appointment/update/${appointmentId}`,
-                { status: "complete" }
-            );
-            console.log("Appointment status updated successfully");
-        } catch (error) {
-            console.error("Failed to update appointment status", error);
-        }
-    }
+		try {
+			const res = await axios.put(
+				`http://localhost:8800/api/appointment/update/${appointmentId}`,
+				{ status: "complete" }
+			);
+			console.log("Appointment status updated successfully");
+		} catch (error) {
+			console.error("Failed to update appointment status", error);
+		}
+	}
 
 	const [dataReceipt, setDataReceipt] = useState(null)
 
-	const CreateReceipt = ( { params } ) =>
-	{
-		
+	const CreateReceipt = ({ params }) => {
+
 
 		const handleCreateReceipt = async (
 			body
-		) =>
-		{
-		console.log( body, user );
+		) => {
+			console.log(body, user);
 
 
-			try
-			{
+			try {
 				// const res = await axios.post(
 				// 	"http://localhost:8800/api/receipt/add",
 				// 	data
 				// );
 				// toast.success( "Create receipt successfully" );
 				// FetchDataAfterDelete();
-			} catch ( error )
-			{
-				toast.error( "Create receipt failed" );
+			} catch (error) {
+				toast.error("Create receipt failed");
 			}
 		};
 		return (
 			<div className="delete">
-				<button
-					className="button-delete"
-					onClick={ () =>
-					{
-						setOpen(true)
-						
-						let data = {
-							Services: params.row?.Services?.split(',')?.map(item => item?.trim()),
-							Discount: 0,
-							Email:  params.row?.Email,
-							Telephone: params.row?.TelephoneCustomer,
-							Name_Customer: params.row?.NameCustomer,
-							// Staff_Name: user?.Name
-							// Status: params.row?.status,
-							Staff_Name: params.row?.Staff,
-							Pet: params.row?.namePet
-						}
-						setDataReceipt(data);
-						
-						// handleCreateReceipt(
-						// 	data
-						// );
-					} }
-				>
-					<MdOutlineReceiptLong className="icon-create" />
-				</button>
-				
+
+				{user.isAdmin && (
+					<button
+						className="button-delete"
+						onClick={() => {
+							setOpen(true)
+
+							let data = {
+								Services: params.row?.Services?.split(',')?.map(item => item?.trim()),
+								Discount: 0,
+								Email: params.row?.Email,
+								Telephone: params.row?.TelephoneCustomer,
+								Name_Customer: params.row?.NameCustomer,
+								// Staff_Name: user?.Name
+								// Status: params.row?.status,
+								Staff_Name: params.row?.Staff,
+								Pet: params.row?.namePet
+							}
+							setDataReceipt(data);
+
+							// handleCreateReceipt(
+							// 	data
+							// );
+						}}
+					>
+						<MdOutlineReceiptLong className="icon-create" />
+					</button>
+
+				)}
+
+
+
 			</div>
 		);
 	};
@@ -397,7 +377,7 @@ export default function Booking ()
 				width: 80,
 				headerName: "Delete",
 				type: "actions",
-				renderCell: ( params ) => <Delete { ...{ params, rowId, setRowId } } />,
+				renderCell: (params) => <Delete {...{ params, rowId, setRowId }} />,
 				editable: true,
 			},
 			{
@@ -405,20 +385,20 @@ export default function Booking ()
 				width: 80,
 				headerName: "Create bill",
 				type: "actions",
-				renderCell: ( params ) => <CreateReceipt { ...{ params, rowId, setRowId } } />,
+				renderCell: (params) => <CreateReceipt {...{ params, rowId, setRowId }} />,
 				editable: true,
 			},
 		],
-		[ rowId ]
+		[rowId]
 	);
 
-	
+
 
 	return (
 		<div className="container">
-			<ModalReceipt 
-				open={open} 
-				onClose={() => setOpen(false)} 
+			<ModalReceipt
+				open={open}
+				onClose={() => setOpen(false)}
 				form={dataReceipt} />
 			<div className="left-container">
 				<Sidebar />
@@ -437,81 +417,81 @@ export default function Booking ()
 							</div>
 							<div className="button-revenue">
 								<React.Fragment>
-									<Link to={ `/appointment` } style={ { textDecoration: "none" } }>
+									<Link to={`/appointment`} style={{ textDecoration: "none" }}>
 										<button className="button-action">add appointment</button>
 									</Link>
 								</React.Fragment>
-								{ step1 ? (
+								{step1 ? (
 									<React.Fragment>
 										<button
 											className="button-action"
-											onClick={ handleStep1 }
-											style={ { backgroundColor: "#bf925b", color: "white" } }
+											onClick={handleStep1}
+											style={{ backgroundColor: "#bf925b", color: "white" }}
 										>
 											current date
 										</button>
 									</React.Fragment>
 								) : (
 									<React.Fragment>
-										<button className="button-action" onClick={ handleStep1 }>
+										<button className="button-action" onClick={handleStep1}>
 											current date
 										</button>
 									</React.Fragment>
-								) }
-								{ step2 ? (
+								)}
+								{step2 ? (
 									<React.Fragment>
 										<button
 											className="button-action"
-											onClick={ handleStep2 }
-											style={ { backgroundColor: "#bf925b", color: "white" } }
+											onClick={handleStep2}
+											style={{ backgroundColor: "#bf925b", color: "white" }}
 										>
 											next date
 										</button>
 									</React.Fragment>
 								) : (
 									<React.Fragment>
-										<button onClick={ handleStep2 } className="button-action">
+										<button onClick={handleStep2} className="button-action">
 											next date
 										</button>
 									</React.Fragment>
-								) }
-								{ step3 ? (
+								)}
+								{step3 ? (
 									<React.Fragment>
 										<button
 											className="button-action"
-											onClick={ handleStep3 }
-											style={ { backgroundColor: "#bf925b", color: "white" } }
+											onClick={handleStep3}
+											style={{ backgroundColor: "#bf925b", color: "white" }}
 										>
 											current month
 										</button>
 									</React.Fragment>
 								) : (
 									<React.Fragment>
-										<button onClick={ handleStep3 } className="button-action">
+										<button onClick={handleStep3} className="button-action">
 											current month
 										</button>
 									</React.Fragment>
-								) }
+								)}
 
-								{ step4 ? (
+								{step4 ? (
 									<React.Fragment>
 										<input
 											type="date"
 											className="input-date"
-											max={ dateEnd }
-											value={ moment( dateStart ).format( "yyyy-MM-DD" ) }
-											onChange={ DateStartHandle }
-											style={ { backgroundColor: "#bf925b", color: "white" } }
+											max={dateEnd}
+											value={moment(dateStart).format("yyyy-MM-DD")}
+											onChange={DateStartHandle}
+											style={{ backgroundColor: "#bf925b", color: "white" }}
 										></input>
 										<input
 											type="date"
 											className="input-date"
-											value={ moment( dateEnd ).format( "yyyy-MM-DD" ) }
-											onChange={ DateEndHandle }
-											style={ { backgroundColor: "#bf925b", color: "white" } }
+											value={moment(dateEnd).format("yyyy-MM-DD")}
+											onChange={DateEndHandle}
+											style={{ backgroundColor: "#bf925b", color: "white" }}
 										></input>
-										<button className="button-action" onClick={ submitHandle }>
-											{ " " }
+										<button className="button-action" onClick={submitHandle}>
+											{" "}
 											Submit
 										</button>
 									</React.Fragment>
@@ -520,89 +500,92 @@ export default function Booking ()
 										<input
 											type="date"
 											className="input-date"
-											max={ dateEnd }
-											value={ moment( dateStart ).format( "yyyy-MM-DD" ) }
-											onChange={ DateStartHandle }
+											max={dateEnd}
+											value={moment(dateStart).format("yyyy-MM-DD")}
+											onChange={DateStartHandle}
 										></input>
 
 										<input
 											type="date"
 											className="input-date"
-											value={ moment( dateEnd ).format( "yyyy-MM-DD" ) }
-											onChange={ DateEndHandle }
+											value={moment(dateEnd).format("yyyy-MM-DD")}
+											onChange={DateEndHandle}
 										></input>
 									</React.Fragment>
-								) }
+								)}
 							</div>
 						</div>
 						<div className="charts-container">
-							{ step1 ? (
+							{step1 ? (
 								<>
-									{ dataDayCurrent.length > 0 ? (
+									{dataDayCurrent.length > 0 ? (
 										<TableUser
-											column={ columns }
-											row={ dataDayCurrent }
-											rowId={ rowId }
-											setRowId={ setRowId }
+											column={columns}
+											row={dataDayCurrent}
+											rowId={rowId}
+											setRowId={setRowId}
 										/>
 									) : (
 										<div className="check-table">
 											You don't have an appointment today!!!
 										</div>
-									) }
+									)}
 								</>
-							) : null }
-							{ step2 ? (
+							) : null}
+							{step2 ? (
 								<>
-									{ dataDayPrevious.length > 0 ? (
+									{dataDayPrevious.length > 0 ? (
 										<TableUser
-											column={ columns }
-											row={ dataDayPrevious }
-											rowId={ rowId }
-											setRowId={ setRowId }
+											column={columns}
+											row={dataDayPrevious}
+											rowId={rowId}
+											setRowId={setRowId}
 										/>
 									) : (
 										<div className="check-table">
 											You don't have an appointment tomorrow!!!
 										</div>
-									) }
+									)}
 								</>
-							) : null }
+							) : null}
 
-							{ step3 ? (
+							{step3 ? (
 								<>
-									{ dataCurrentMonth.length > 0 ? (
+									{dataCurrentMonth.length > 0 ? (
 										<TableUser
-											column={ columns }
-											row={ dataCurrentMonth }
-											rowId={ rowId }
-											setRowId={ setRowId }
+											column={columns}
+											row={dataCurrentMonth}
+											rowId={rowId}
+											setRowId={setRowId}
 										/>
 									) : (
 										<div className="check-table">
 											You don't have an appointment this month !!!
 										</div>
-									) }
+									)}
 								</>
-							) : null }
-							{ step4 ? (
+							) : null}
+							{step4 ? (
 								<TableUser
-									column={ columns }
-									row={ dataDayRange }
-									rowId={ rowId }
-									setRowId={ setRowId }
+									column={columns}
+									row={dataDayRange}
+									rowId={rowId}
+									setRowId={setRowId}
 								/>
-							) : null }
+							) : null}
 						</div>
 					</div>
 					<div className="chart-booking">
-						<div className="chart-booking-right">
-							<ChartAppointment />
-						</div>
+						{!user.isAdmin && (
+							<div className="chart-booking-right">
+								<ChartAppointment />
+							</div>
+						)}
+
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	);
 }

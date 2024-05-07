@@ -37,10 +37,6 @@ rules:
   - intent: best_time
   - action: utter_best_time
 
-- rule: User asks about evening operation
-  steps:
-  - intent: evening_operation
-  - action: utter_evening_operation
 
 - rule: User asks about weekend operation
   steps:
@@ -106,6 +102,44 @@ rules:
   steps:
   - intent: grooming_tips
   - action: utter_grooming_tips
+
+
+
+- rule: Respond to service_cut_grooming
+  steps:
+  - intent: service_cut_grooming
+  - action: utter_service_cut_grooming
+
+- rule: Respond to service_dye_hair
+  steps:
+  - intent: service_dye_hair
+  - action: utter_service_dye_hair
+
+- rule: Respond to service_ear_cleaning
+  steps:
+  - intent: service_ear_cleaning
+  - action: utter_service_ear_cleaning
+
+- rule: Respond to service_nail_trimming
+  steps:
+  - intent: service_nail_trimming
+  - action: utter_service_nail_trimming
+
+- rule: Respond to service_pet_transportation
+  steps:
+  - intent: service_pet_transportation
+  - action: utter_service_pet_transportation
+
+- rule: Respond to service_reasonable_pricing
+  steps:
+  - intent: service_reasonable_pricing
+  - action: utter_service_reasonable_pricing
+
+- rule: Respond to service_dental_hygiene
+  steps:
+  - intent: service_dental_hygiene
+  - action: utter_service_dental_hygiene
+
 
 - rule: User says thank you
   steps:

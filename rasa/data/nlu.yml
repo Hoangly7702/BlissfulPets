@@ -55,12 +55,6 @@ nlu:
     - Thời gian nào là thích hợp nhất để đến Blissful Pets?
     - Buổi nào là thời gian tốt nhất để đến Blissful Pets?
 
-- intent: evening_operation
-  examples: |
-    - Blissful Pets hoạt động vào buổi tối không?
-    - Blissful Pets có mở cửa vào buổi tối không?
-    - Blissful Pets làm việc vào buổi tối không?
-    - Blissful Pets có nhận thú cưng vào buổi tối không?
 
 - intent: weekend_operation
   examples: |
@@ -140,6 +134,57 @@ nlu:
     - Làm thế nào để giữ lông của thú cưng sạch sẽ và không rối?
     - Có cách nào để làm sạch và chải lông cho thú cưng không?
     - Làm thế nào để duy trì lông của thú cưng luôn bóng mượt?
+
+
+- intent: service_cut_grooming
+  examples: |
+    - Blissful Pets có dịch vụ cắt tỉa lông không?
+    - Blissful Pets có cắt tỉa lông không?
+    - Tôi muốn biết liệu Blissful Pets có cắt tỉa lông không?
+    - Blissful Pets có dịch vụ cắt tỉa lông cho thú cưng không?
+
+- intent: service_dye_hair
+  examples: |
+    - Blissful Pets có dịch vụ nhuộm lông cho thú cưng không?
+    - Blissful Pets có nhuộm lông không?
+    - Tôi muốn biết liệu Blissful Pets có nhuộm lông không?
+    - Blissful Pets có dịch vụ nhuộm lông không?
+
+- intent: service_ear_cleaning
+  examples: |
+    - Blissful Pets có thực hiện vệ sinh tai cho thú cưng không?
+    - Blissful Pets có dịch vụ vệ sinh tai không?
+    - Tôi muốn biết liệu Blissful Pets có vệ sinh tai cho thú cưng không?
+    - Blissful Pets có dịch vụ vệ sinh tai không?
+
+- intent: service_nail_trimming
+  examples: |
+    - Blissful Pets có cung cấp dịch vụ cắt móng cho thú cưng không?
+    - Blissful Pets có cắt móng không?
+    - Tôi muốn biết liệu Blissful Pets có cắt móng cho thú cưng không?
+    - Blissful Pets có dịch vụ cắt móng không?
+
+- intent: service_pet_transportation
+  examples: |
+    - Blissful Pets có dịch vụ vận chuyển thú cưng không?
+    - Blissful Pets có vận chuyển thú cưng không?
+    - Tôi muốn biết liệu Blissful Pets có vận chuyển thú cưng không?
+    - Blissful Pets có dịch vụ vận chuyển không?
+
+- intent: service_reasonable_pricing
+  examples: |
+    - Blissful Pets có giá cả hợp lý không?
+    - Blissful Pets có giá cả phải chăng không?
+    - Tôi muốn biết liệu Blissful Pets có giá cả hợp lý không?
+    - Blissful Pets có giá cả phải chăng không?
+
+- intent: service_dental_hygiene
+  examples: |
+    - Blissful Pets có nhận vệ sinh răng cho thú cưng không?
+    - Blissful Pets có vệ sinh răng không?
+    - Tôi muốn biết liệu Blissful Pets có vệ sinh răng cho thú cưng không?
+    - Blissful Pets có dịch vụ vệ sinh răng không?
+
 
 - intent: thank_you
   examples: |

@@ -18,8 +18,6 @@ stories:
   - action: utter_holiday_closures
   - intent: best_time
   - action: utter_best_time
-  - intent: evening_operation
-  - action: utter_evening_operation
   - intent: weekend_operation
   - action: utter_weekend_operation
   - intent: services_offered
@@ -49,6 +47,44 @@ stories:
   - action: utter_wound_care
   - intent: grooming_tips
   - action: utter_grooming_tips
+
+
+
+- story: Service cut grooming
+  steps:
+  - intent: service_cut_grooming
+  - action: utter_service_cut_grooming
+
+- story: Service dye hair
+  steps:
+  - intent: service_dye_hair
+  - action: utter_service_dye_hair
+
+- story: Service ear cleaning
+  steps:
+  - intent: service_ear_cleaning
+  - action: utter_service_ear_cleaning
+
+- story: Service nail trimming
+  steps:
+  - intent: service_nail_trimming
+  - action: utter_service_nail_trimming
+
+- story: Service pet transportation
+  steps:
+  - intent: service_pet_transportation
+  - action: utter_service_pet_transportation
+
+- story: Service reasonable pricing
+  steps:
+  - intent: service_reasonable_pricing
+  - action: utter_service_reasonable_pricing
+
+- story: Service dental hygiene
+  steps:
+  - intent: service_dental_hygiene
+  - action: utter_service_dental_hygiene
+
 
 - story: Thank You and Goodbye
   steps:

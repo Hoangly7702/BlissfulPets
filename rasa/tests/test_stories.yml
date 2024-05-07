@@ -132,10 +132,7 @@ stories:
       Có cần gọi điện để xác nhận việc đặt lịch hẹn trước không?
     intent: reservation_confirmation
   - action: utter_reservation_confirmation
-  - user: |
-      Blissful Pets có nhận thú cưng vào buổi tối không?
-    intent: evening_operation
-  - action: utter_evening_operation
+
   - user: |
       Blissful Pets có mở cửa cả cuối tuần không?
     intent: weekend_operation
