@@ -93,7 +93,10 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-
+- story: User gives negative feedback
+  steps:
+  - intent: negative_feedback
+  - action: utter_handle_negative_feedback
 
 # stories:
 

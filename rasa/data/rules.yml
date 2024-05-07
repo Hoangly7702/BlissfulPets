@@ -151,6 +151,10 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: User gives negative feedback
+  steps:
+  - intent: negative_feedback
+  - action: utter_handle_negative_feedback
 
 # rules:
 

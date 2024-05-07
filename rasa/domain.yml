@@ -34,14 +34,16 @@ intents:
 
 - thank_you
 - goodbye
+- negative_feedback
 
 responses:
   utter_greet:
   - text: "Chào bạn! Blissful Pets có thể giúp gì cho bạn hôm nay?"
+  - text: "Xin chào! Bạn có cần tư vấn về dịch vụ cho thú cưng không?"
   utter_opening_hours:
   - text: "Blissful Pets mở cửa từ 8 giờ sáng đến 6 giờ chiều hàng ngày."
   utter_working_hours:
-  - text: "Giờ làm việc của Blissful Pets là từ thứ Hai đến Chủ Nhật."
+  - text: "Giờ làm việc là từ thứ Hai đến Chủ Nhật vào 8:00 - 17:30  hàng ngày."
   utter_operation_days:
   - text: "Blissful Pets hoạt động vào tất cả các ngày trong tuần."
   utter_appointment_required:
@@ -95,11 +97,16 @@ responses:
 
   utter_you_are_welcome:
   - text: "Rất vui được phục vụ bạn."
+
   utter_goodbye:
   - text: "Hẹn gặp lại bạn vào lần sau!"
+  - text: "Chúc bạn một ngày tốt lành và xin chào tạm biệt!"
 
   utter_fallback:
-  - text: "Mình xin lỗi, mình chưa hiểu ý muốn của bạn. Bạn có thể nói lại được không?"
+  - text: "Mình chưa hiểu ý muốn của bạn. Bạn có thể nói lại được không?"
+
+  utter_handle_negative_feedback:
+    - text: "Xin lỗi về sự bất tiện. Hãy cho mình biết thêm thông tin để mình có thể hỗ trợ bạn tốt hơn."
 
 
 actions:
@@ -126,6 +133,7 @@ actions:
 - utter_you_are_welcome
 - utter_goodbye
 - utter_fallback
+- utter_handle_negative_feedback
 
 session_config:
   session_expiration_time: 60

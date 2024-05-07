@@ -7,14 +7,12 @@ nlu:
     - Xin chào
     - Hi
     - Hello
-    - Chào bạn
-    - Mình cần hỗ trợ
-    - Mình cần tư vấn
     - Tôi cần giúp đỡ
     - Tôi có thắc mắc
 
 - intent: opening_hours
   examples: |
+    - Mở cửa
     - Giờ mở cửa là bao nhiêu?
     - Blissful Pets mở cửa vào lúc nào?
     - Khi nào Blissful Pets mở cửa?
@@ -22,10 +20,11 @@ nlu:
 
 - intent: working_hours
   examples: |
-    - Giờ làm việc của Blissful Pets là gì?
+    - Giờ làm việc 
     - Blissful Pets làm việc vào thời gian nào?
-    - Khi nào Blissful Pets làm việc?
-    - Blissful Pets hoạt động vào giờ nào?
+    - Spa hoạt động vào những ngày nào?
+    - Blissful Pets hoạt động khoảng thời gian nào?
+    - Hoạt động vào thứ mấy và vào thời gian nào?
 
 - intent: operation_days
   examples: |
@@ -43,6 +42,8 @@ nlu:
 
 - intent: holiday_closures
   examples: |
+    - Thông báo khi có nghỉ lễ
+    - Thông báo khi có đóng cửa
     - Blissful Pets đóng cửa vào các ngày lễ không?
     - Cửa hàng Blissful Pets đóng cửa vào ngày lễ không?
     - Blissful Pets có đóng cửa vào các ngày nghỉ tết không?
@@ -68,6 +69,8 @@ nlu:
     - Blissful Pets cung cấp những dịch vụ nào?
     - Dịch vụ nào có sẵn tại Blissful Pets?
     - Blissful Pets cung cấp những loại dịch vụ gì cho thú cưng?
+
+
 
 - intent: popular_service
   examples: |
@@ -98,6 +101,8 @@ nlu:
     - Blissful Pets chấp nhận loại thú cưng nào?
     - Loại thú cưng nào được chấp nhận tại Blissful Pets?
     - Blissful Pets có nhận mọi loại thú cưng không?
+    - Spa dành cho những vật nuôi nào
+
 
 - intent: pet_care_tips
   examples: |
@@ -110,12 +115,16 @@ nlu:
     - Làm thế nào để huấn luyện thú cưng không ồn ào?
     - Có cách nào để huấn luyện thú cưng không làm ồn ào?
     - Làm thế nào để huấn luyện thú cưng mà không gây ra tiếng ồn?
+    - Thú cưng của tôi nay nghịch phá gây tiếng ồn
+    - Thú cưng ngứa răng hay cắn đồ
 
 - intent: dental_care_tips
   examples: |
     - Làm thế nào để giữ gìn sức khỏe răng miệng cho thú cưng?
     - Có cách nào để duy trì sức khỏe răng miệng cho thú cưng không?
     - Làm thế nào để thú cưng giữ gìn sức khỏe răng miệng?
+    - Thú cưng bị hôi miệng
+    - Chăm sóc răng miệng và khử mùi hôi miệng
 
 - intent: safe_toys
   examples: |
@@ -134,7 +143,7 @@ nlu:
     - Làm thế nào để giữ lông của thú cưng sạch sẽ và không rối?
     - Có cách nào để làm sạch và chải lông cho thú cưng không?
     - Làm thế nào để duy trì lông của thú cưng luôn bóng mượt?
-
+    - Chăm sóc, làm sạch bộ lông
 
 - intent: service_cut_grooming
   examples: |
@@ -142,6 +151,7 @@ nlu:
     - Blissful Pets có cắt tỉa lông không?
     - Tôi muốn biết liệu Blissful Pets có cắt tỉa lông không?
     - Blissful Pets có dịch vụ cắt tỉa lông cho thú cưng không?
+    - Dịch vụ cắt tỉa lông 
 
 - intent: service_dye_hair
   examples: |
@@ -149,6 +159,7 @@ nlu:
     - Blissful Pets có nhuộm lông không?
     - Tôi muốn biết liệu Blissful Pets có nhuộm lông không?
     - Blissful Pets có dịch vụ nhuộm lông không?
+    - Đổi màu lông cho thú cưng
 
 - intent: service_ear_cleaning
   examples: |
@@ -156,6 +167,8 @@ nlu:
     - Blissful Pets có dịch vụ vệ sinh tai không?
     - Tôi muốn biết liệu Blissful Pets có vệ sinh tai cho thú cưng không?
     - Blissful Pets có dịch vụ vệ sinh tai không?
+    - Làm sạch tai cho thú cưng
+    - Bắt rận trong tai cho thú cưng
 
 - intent: service_nail_trimming
   examples: |
@@ -163,6 +176,7 @@ nlu:
     - Blissful Pets có cắt móng không?
     - Tôi muốn biết liệu Blissful Pets có cắt móng cho thú cưng không?
     - Blissful Pets có dịch vụ cắt móng không?
+    - Cắt tỉa móng cho thú cưng
 
 - intent: service_pet_transportation
   examples: |
@@ -177,6 +191,7 @@ nlu:
     - Blissful Pets có giá cả phải chăng không?
     - Tôi muốn biết liệu Blissful Pets có giá cả hợp lý không?
     - Blissful Pets có giá cả phải chăng không?
+    - Giá dịch vụ có ổn không
 
 - intent: service_dental_hygiene
   examples: |
@@ -194,6 +209,8 @@ nlu:
     - Rất cảm ơn về sự giúp đỡ của bạn.
     - Xin cảm ơn Blissful Pets về thông tin hữu ích.
     - Cảm ơn nhiều
+    - Thông tin rất hữu ích
+    - Hihi, cảm ơn nhé
 
 - intent: goodbye
   examples: |
@@ -202,6 +219,20 @@ nlu:
     - Cảm ơn và hẹn gặp lại.
     - Hẹn gặp lại vào lần sau.
     - Chúc bạn một ngày tốt lành và xin chào tạm biệt!
+
+- intent: negative_feedback
+  examples: |
+    - Trời ơi.
+    - Cái gì thế.
+    - Không phải.
+    - Bạn hiểu sai ý tôi rồi
+    - Bot này cùi bắp quá
+    - Đây không phải là điều tôi muốn hỏi
+    - Ý tôi không phải thế này
+    - Không
+
+
+
 
 # nlu:
 # - intent: greet
