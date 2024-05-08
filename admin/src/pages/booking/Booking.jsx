@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import ChartAppointment from "../../components/Charts/ChartAppointment";
 import { AuthContext } from "../../context/AuthContext";
 import ModalReceipt from "../../components/Modal/ModalReceipt";
+import ListTaskToday from "../../components/Charts/ListTaskToday";
 
 export default function Booking() {
 	const [rowId, setRowId] = useState("");
@@ -578,7 +579,7 @@ export default function Booking() {
 					<div className="chart-booking">
 						{!user.isAdmin && (
 							<div className="chart-booking-right">
-								<ChartAppointment />
+								 <ListTaskToday />
 							</div>
 						)}
 

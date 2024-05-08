@@ -5,11 +5,14 @@ import "../../styles/store.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Store() {
   const [data, setData] = useState("");
   const [step1, setStep1] = useState(true);
   const [step2, setStep2] = useState(false);
+	const { user } = useContext(AuthContext);
 
   const handleStep1 = () => {
     setStep1(true);
@@ -252,9 +255,15 @@ export default function Store() {
                 </React.Fragment>
               ) : (
                 <React.Fragment>
-                  <button onClick={handleStep2} className="button-action">
+                  
+
+                  {user?.isAdmin &&(
+                    <button onClick={handleStep2} className="button-action">
                     update
                   </button>
+                  )}
+                  
+
                 </React.Fragment>
               )}
             </div>

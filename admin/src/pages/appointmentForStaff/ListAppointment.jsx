@@ -152,7 +152,11 @@ export default function ListAppointment() {
         headerName: "Staff",
         width: 100,
       },
-
+      {
+				field: "namePet",
+				headerName: "Pet",
+				width: 100,
+			},
       {
         field: "Services",
         headerName: "Services",

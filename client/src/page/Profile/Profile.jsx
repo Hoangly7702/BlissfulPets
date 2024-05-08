@@ -55,7 +55,7 @@ export default function Profile() {
       const res = await axios.get(
         "http://127.0.0.1:8800/api/recommendation"
       );
-    
+
       console.log(res);
 
     };
@@ -168,15 +168,22 @@ export default function Profile() {
     );
   };
 
+  const [isReadyToEvaluate, setIsReadyToEvaluate] = useState(false);
+
+
   const Modal = ({ open, data }) => {
     const [inputField, setInputField] = useState({
       Review: "",
     });
     const InputHandler = (e) => {
       setInputField({ ...inputField, [e.target.name]: e.target.value });
+      
+
     };
     const getRating = async (rate) => {
       setRating(rate);
+      setIsReadyToEvaluate(true); // Kích hoạt nút "Evaluate" khi người dùng chọn số sao
+
     };
 
     const saveRating = async (e) => {
@@ -271,9 +278,11 @@ export default function Profile() {
               </div>
               <div className="item-evaluate">
                 <div className="div-button">
-                  <button className="button-action" onClick={saveRating}>
-                    Evaluate
-                  </button>
+                  {isReadyToEvaluate ? (
+                    <button className="button-action" onClick={saveRating}>Evaluate</button>
+                  ) : (
+                    <button className="button-action" disabled>Evaluate</button>
+                  )}
                 </div>
               </div>
             </>

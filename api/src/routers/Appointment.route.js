@@ -15,6 +15,7 @@ import {
   GetAllAppointmentMatchPendingWithRangeTime,
   AppointmentPieChart,
   GetAppointmentForStaff,
+  AppointmentToday,
   AddPet,
   GetListPet,
   DeletePet,
@@ -26,6 +27,9 @@ router.get("/cancel", GetAppointmentMatchCancel);
 
 // get appointment with status pending
 router.get("/pending", GetAppointmentMatchPending);
+
+router.get("/today", AppointmentToday);
+
 
 // get appointment with status pending
 router.post("/all-pending", GetAllAppointmentMatchPending);
